@@ -1,0 +1,47 @@
+@page "/listarusuarios"
+@using Data
+@using Newtonsoft.Json
+@inject HttpClient client
+
+
+<button type="button" @onclick="PegarUsuarios" class="btn btn-link" >Listar Usuários</button>
+
+
+<div class="col-5">
+  
+    <table class="table">
+      
+        <thead>
+            <tr>
+                <th scope="col">Usuário</th>
+                <th scope="col">Data de Criaçao</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Logins)
+            {
+                <tr>
+                  <td>@item.Usuario</td>
+                  <td>@item.DataCriacao</td>
+                </tr>                
+            }
+           
+        </tbody>
+    </table>
+</div>
+
+@code{    
+    List<Login>? Logins=new List<Login>();
+    private async void PegarUsuarios(){
+        var apiName = "http://nayara-001-site1.htempurl.com/api/login"; //aqui é o endpoint.
+        var httpResponse = await client.GetAsync(apiName);
+        if(httpResponse.IsSuccessStatusCode){       
+            var apiConteudo = await httpResponse.Content.ReadAsStringAsync();
+            //Agora é a famosa Desserialização
+            Logins = JsonConvert.DeserializeObject<List<Login>>(apiConteudo);
+            StateHasChanged();
+        }
+
+    }
+
+}
