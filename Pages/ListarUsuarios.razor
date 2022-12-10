@@ -3,42 +3,42 @@
 @using Newtonsoft.Json
 @inject HttpClient client
 
-
-<button type="button" @onclick="PegarUsuarios" class="btn btn-link" >Listar Usuários</button>
-
-
-<div class="col-5">
-  
-    <table class="table">
+<div class="container-fluid" >
+  @if (Users != null)
+  {
+    <table class="table table-bordered table-striped">
       
         <thead>
             <tr>
                 <th scope="col">Usuário</th>
-                <th scope="col">Data de Criaçao</th>
+                <th scope="col">Data de Criação</th>
             </tr>
         </thead>
         <tbody>
-            @foreach (var item in Logins)
+            @foreach (var user in Users)
             {
                 <tr>
-                  <td>@item.Usuario</td>
-                  <td>@item.DataCriacao</td>
+                  <td>@user.Usuario</td>
+                  <td>@user.DataCriacao</td>
                 </tr>                
             }
            
         </tbody>
     </table>
+  }
 </div>
+<div class="col"><button type="button" @onclick="GetUser" class="btn btn-link" >Listar Usuários</button></div>
 
 @code{    
-    List<Login>? Logins=new List<Login>();
-    private async void PegarUsuarios(){
-        var apiName = "http://nayara-001-site1.htempurl.com/api/login"; //aqui é o endpoint.
+    List<Login>? Users;
+    private async void GetUser(){
+        var apiName = "http://nayara-001-site1.htempurl.com/api/login"; // endpoint.
         var httpResponse = await client.GetAsync(apiName);
-        if(httpResponse.IsSuccessStatusCode){       
+        if(httpResponse.IsSuccessStatusCode){ 
+            Users = new List<Login>();      
             var apiConteudo = await httpResponse.Content.ReadAsStringAsync();
-            //Agora é a famosa Desserialização
-            Logins = JsonConvert.DeserializeObject<List<Login>>(apiConteudo);
+            //famosa Desserialização
+            Users = JsonConvert.DeserializeObject<List<Login>>(apiConteudo);
             StateHasChanged();
         }
 

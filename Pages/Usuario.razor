@@ -1,0 +1,10 @@
+@page "/fetchdata/{usuario}"
+
+<h3>Usuario</h3>
+<div>
+    @usuario
+</div>
+@code {
+    [Parameter]
+    public string? usuario { get; set; }
+}

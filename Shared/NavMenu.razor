@@ -1,6 +1,6 @@
 ﻿<div class="top-row ps-3 navbar navbar-dark">
     <div class="container-fluid">
-    <a class="navbar-brand" style="color: white; padding:3px; font-size: 30px; text-align: center; font-family:Arial, Helvetica, sans-serif;" href="">Voe Airlines</a>
+    <a class="navbar-brand" style="color: white; padding:3px; font-size: 30px; text-align:" href="">Voe Airlines</a>
         <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -15,13 +15,19 @@
             </NavLink>
         </div>
         <div class="nav-item px-3">
-            <NavLink class="nav-link" href="listaraeronaves">
-                <span class="oi oi-plus" aria-hidden="true"></span> Listar Aeronaves
+            <NavLink class="nav-link" href="autentica">
+                <span class="oi oi-list" aria-hidden="true"></span> Listar Usuários
             </NavLink>
         </div>
         <div class="nav-item px-3">
+            <NavLink class="nav-link" href="acessa">
+                <span class="oi oi-list-rich" aria-hidden="true"></span> Listar Aeronaves
+            </NavLink>
+        </div>
+
+        <div class="nav-item px-3">
             <NavLink class="nav-link" href="fetchdata">
-                <span class="oi oi-list-rich" aria-hidden="true"></span> Fetch data
+                <span class="oi oi-rain" aria-hidden="true"></span> Fetch data
             </NavLink>
         </div>
     </nav>
