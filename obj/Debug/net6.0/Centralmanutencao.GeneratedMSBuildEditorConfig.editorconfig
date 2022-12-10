@@ -23,6 +23,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRpY2lvbmFyVXN1YXJpby5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Nayara/Desktop/SENAI/Blazor/Centralmanutencao/Pages/AdicionarUsuarios.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRpY2lvbmFyVXN1YXJpb3MucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Nayara/Desktop/SENAI/Blazor/Centralmanutencao/Pages/Autentica.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXV0ZW50aWNhLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
@@ -41,10 +45,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Nayara/Desktop/SENAI/Blazor/Centralmanutencao/Pages/ListarUsuarios.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTGlzdGFyVXN1YXJpb3MucmF6b3I=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Nayara/Desktop/SENAI/Blazor/Centralmanutencao/Pages/Usuario.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXN1YXJpby5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Nayara/Desktop/SENAI/Blazor/Centralmanutencao/Shared/SurveyPrompt.razor]

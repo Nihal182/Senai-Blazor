@@ -1,0 +1,36 @@
+@page "/adicionausuarios"
+@inject HttpClient client
+@using Data
+@using Newtonsoft.Json;
+
+Usuário <input type="text" @bind="InputNome">
+Senha <input type="text" @bind="InputSenha1">
+Data de Criação <input type="date" @bind="InputDataCriacao">
+
+
+
+<button @onclick="CadastrarUsuario" >Cadastrar</button>
+
+@mensagem
+
+@code{
+    private string? mensagem;
+    private string? InputNome;
+    private string? InputSenha1;
+    private DateTime InputDataCriacao;
+    
+    Usuario usuario =new Usuario();
+    
+    private async Task CadastrarUsuario(){
+        //atribuindo os valores no objeto
+        usuario.Nome = InputNome;
+        usuario.SetSenha1(InputSenha1);
+        usuario.DataCriacao = InputDataCriacao;
+
+        var response = await client
+                          .PostAsJsonAsync<Usuario>("http://nayara-001-site1.htempurl.com/api/login", 
+                           usuario);
+        
+        mensagem = "Usuário cadastrado com sucesso";
+    }
+}
