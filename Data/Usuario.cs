@@ -1,7 +1,6 @@
 using Newtonsoft.Json;
 
-namespace Centralmanutencao.Data;
-
+namespace voeairlines_blazor.Data;
 public class Usuario
 {
     
